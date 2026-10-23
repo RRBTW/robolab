@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel", "Cython>=3.1", "numpy>=1.24"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robolab-transforms"
+version = "0.5.0"
+description = "SO(3)/SE(3) with typed frames, kinematic trees and humanoid walking; Cython+OpenMP and CUDA kernels"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.24", "scipy>=1.9"]
+
+[project.scripts]
+robolab = "robolab.cli:main"
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+test = ["pytest", "spatialmath-python"]
+cuda = ["cupy-cuda12x[ctk]"]
+
+[tool.setuptools.packages.find]
+include = ["robolab*"]
+
+[tool.setuptools.package-data]
+"robolab.transforms" = ["*.pyx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

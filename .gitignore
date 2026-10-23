@@ -1,0 +1,13 @@
+__pycache__/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+robolab/transforms/_core_cy.c
+robolab/transforms/*.so
+robolab/transforms/*.pyd
+results*/
+*.gif
+venv/
+.venv/
+.ipynb_checkpoints/
